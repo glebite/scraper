@@ -1,5 +1,8 @@
 """
 common.py
+button class="lds__privacy-policy__btnClose"
+       class="lds__privacy-policy__btnClose"
+Ontario
 """
 import time
 from selenium import webdriver
@@ -13,11 +16,21 @@ class Common(object):
         self.driver = webdriver.Firefox()
         self.driver.get(LOCATION)
 
-
     def __del__(self):
         self.driver.close()
 
+    def find(self, tag, tag_class):
+        d = self.driver.find_element_by_class_name('lds__privacy-policy__btnClose')
+        if d:
+            d.click()
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     x = Common()
+    time.sleep(10)
+    x.find('button', 'something')
+    time.sleep(5)
+    button = x.driver.find_element_by_xpath("//*[contains(text(), 'Ontario')]")
+    button.click()
+    time.sleep(60)
     del x
