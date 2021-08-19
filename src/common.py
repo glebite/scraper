@@ -20,7 +20,9 @@ class Common(object):
         self.driver.close()
 
     def find(self, tag, tag_class):
-        d = self.driver.find_element_by_class_name('lds__privacy-policy__btnClose')
+        d = self.driver.find_element_by_class_name('lds__privacy-'
+                                                   'policy__btnClose')
+        print(d)
         if d:
             d.click()
 
@@ -31,6 +33,4 @@ if __name__ == "__main__":
     x.find('button', 'something')
     time.sleep(5)
     button = x.driver.find_element_by_xpath("//*[contains(text(), 'Ontario')]")
-    button.click()
-    time.sleep(60)
-    del x
+
