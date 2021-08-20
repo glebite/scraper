@@ -32,5 +32,8 @@ if __name__ == "__main__":
     time.sleep(10)
     x.find('button', 'something')
     time.sleep(5)
-    button = x.driver.find_element_by_xpath("//*[contains(text(), 'Ontario')]")
-
+    button = x.driver.find_element_by_xpath("//button[contains(text(), 'Ontario')]")
+    print(button)
+    time.sleep(10)
+    button.click()
+    time.sleep(30)
