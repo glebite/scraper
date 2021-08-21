@@ -9,6 +9,8 @@ from selenium import webdriver
 
 
 LOCATION = 'https://www.yourindependentgrocer.ca/'
+ONTARIO_BUTTON = "//button[contains(text(), 'Ontario')]"
+PRIVACY_BUTTON = 'lds__privacy-policy__btnClose'
 
 
 class Common(object):
@@ -20,8 +22,7 @@ class Common(object):
         self.driver.close()
 
     def find(self, tag, tag_class):
-        d = self.driver.find_element_by_class_name('lds__privacy-'
-                                                   'policy__btnClose')
+        d = self.driver.find_element_by_class_name(PRIVACY_BUTTON)
         print(d)
         if d:
             d.click()
@@ -32,7 +33,7 @@ if __name__ == "__main__":
     time.sleep(10)
     x.find('button', 'something')
     time.sleep(5)
-    button = x.driver.find_element_by_xpath("//button[contains(text(), 'Ontario')]")
+    button = x.driver.find_element_by_xpath(ONTARIO_BUTTON)
     print(button)
     time.sleep(10)
     button.click()
