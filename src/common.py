@@ -18,15 +18,15 @@ class Common(object):
         """
         """
         self.driver = webdriver.Firefox()
-        self.driver.get(LOCATION)
+        self.driver.get(LOCATION)0
 
     def __del__(self):
-        """
+        """__del__ - perform any needed cleanup action
         """
         self.driver.close()
 
     def find(self, tag, tag_class):
-        """
+        """find - find a specific element by classname
         """
         d = self.driver.find_element_by_class_name(PRIVACY_BUTTON)
         print(d)
