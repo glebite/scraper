@@ -8,9 +8,10 @@ import time
 from selenium import webdriver
 
 
-LOCATION = 'https://www.yourindependentgrocer.ca/'
+URL = 'https://www.yourindependentgrocer.ca/'
 ONTARIO_BUTTON = "//button[contains(text(), 'Ontario')]"
 PRIVACY_BUTTON = 'lds__privacy-policy__btnClose'
+LOCATION_CRULLER = 'data-cruller="current-location"'
 
 
 class Common(object):
@@ -18,7 +19,7 @@ class Common(object):
         """
         """
         self.driver = webdriver.Firefox()
-        self.driver.get(LOCATION)
+        self.driver.get(URL)
 
     def __del__(self):
         """__del__ - perform any needed cleanup action
@@ -33,9 +34,13 @@ class Common(object):
             d.click()
 
     def goto(self, url=None):
-        """goto 
+        """goto - retrieve the URL location
         """
-        self.driver.get(url)
+        try:
+            self.driver.get(url)
+        except Exception as e:
+            print(f'Exception: {e}')
+
 
 if __name__ == "__main__":
     x = Common()
