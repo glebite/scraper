@@ -48,6 +48,11 @@ class Common(object):
         if d:
             d.click()
 
+    def wait_until(self, tag, delay = 60):
+        """
+        """
+        pass
+
     def goto(self, url=None):
         """goto - retrieve the URL location
         """
