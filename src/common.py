@@ -1,8 +1,5 @@
 """
 common.py
-button class="lds__privacy-policy__btnClose"
-       class="lds__privacy-policy__btnClose"
-Ontario
 """
 import time
 from selenium import webdriver
@@ -48,7 +45,7 @@ class Common(object):
         if d:
             d.click()
 
-    def wait_until(self, tag, delay = 60):
+    def wait_until(self, tag, delay=60):
         """
         """
         pass
