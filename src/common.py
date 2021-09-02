@@ -21,11 +21,11 @@ class Common(object):
         self.driver = webdriver.Firefox()
         self.driver.get(URL)
         time.sleep(10)
+        # wait until button is available
         self.find('button', 'something')
         time.sleep(5)
+        # wait until button is available
         button = self.driver.find_element_by_xpath(ONTARIO_BUTTON_XPATH)
-        print(button)
-        time.sleep(10)
         button.click()
         time.sleep(30)
         button = self.driver.find_element_by_class_name(LOCATION_CRULLER)
