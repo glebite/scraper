@@ -1,5 +1,7 @@
 """
 common.py
+
+Common routine to connect.
 """
 import time
 from selenium import webdriver
